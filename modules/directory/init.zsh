@@ -29,3 +29,9 @@ unsetopt CLOBBER            # Do not overwrite existing files with > and >>.
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
+if (is-at-least 4.1) then # needs at least zsh 4.1 for dirs -p
+    if [[ -f ~/.zdirs ]] && [[ ${#dirstack[*]} -eq 0 ]]; then
+        dirstack=( ${(uf)"$(< ~/.zdirs)"} )
+    fi
+    chpwd() { dirs -pl >! ~/.zdirs }
+fi
