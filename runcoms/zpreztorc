@@ -30,13 +30,18 @@ zstyle ':prezto:load' pmodule \
   'history' \
   'directory' \
   'spectrum' \
+  'gnu-utility' \
   'utility' \
   'completion' \
-  'prompt' \
   'git' \
   'homebrew' \
   'node' \
-  'ruby'
+  'osx' \
+  'rails' \
+  'ruby' \
+  'syntax-highlighting' \
+  'tmux' \
+  'prompt'
 
 #
 # Editor
