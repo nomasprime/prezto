@@ -29,9 +29,18 @@ unsetopt CLOBBER            # Do not overwrite existing files with > and >>.
 alias d='dirs -v'
 for index ({1..9}) alias "$index"="cd +${index}"; unset index
 
-if (is-at-least 4.1) then # needs at least zsh 4.1 for dirs -p
+if (is-at-least 4.1) \
+    && zstyle -t ':prezto:module:directory' persist-dirstack
+then
     if [[ -f ~/.zdirs ]] && [[ ${#dirstack[*]} -eq 0 ]]; then
-        dirstack=( ${(uf)"$(< ~/.zdirs)"} )
+        # We need to clean home directory
+        dirstack=( ${(uf)"$(< ~/.zdirs)"//"$HOME"([[:space:]]|)/} )
     fi
-    chpwd() { dirs -pl >! ~/.zdirs }
+
+    function _persist_dirstack {
+        dirs -pl >! ~/.zdirs
+    }
+
+    autoload -Uz add-zsh-hook
+    add-zsh-hook chpwd _persist_dirstack
 fi

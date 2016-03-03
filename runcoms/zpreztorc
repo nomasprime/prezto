@@ -44,6 +44,20 @@ zstyle ':prezto:load' pmodule \
   'prompt'
 
 #
+# Autosuggestions
+#
+
+# Set the query found color.
+# zstyle ':prezto:module:autosuggestions:color' found ''
+
+#
+# Directory
+#
+
+# Persist dirstack
+# zstyle ':prezto:module:directory' persist-dirstack 'yes'
+
+#
 # Editor
 #
 
@@ -130,6 +144,7 @@ zstyle ':prezto:module:prompt' theme 'garrett'
 #   'main' \
 #   'brackets' \
 #   'pattern' \
+#   'line' \
 #   'cursor' \
 #   'root'
 #
