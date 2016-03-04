@@ -55,7 +55,7 @@ zstyle ':prezto:load' pmodule \
 #
 
 # Persist dirstack
-# zstyle ':prezto:module:directory' persist-dirstack 'yes'
+zstyle ':prezto:module:directory' persist-dirstack 'yes'
 
 #
 # Editor
