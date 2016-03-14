@@ -34,7 +34,7 @@ if (is-at-least 4.1) \
 then
     if [[ -f ~/.zdirs ]] && [[ ${#dirstack[*]} -eq 0 ]]; then
         # We need to clean home directory
-        dirstack=( ${(uf)"$(< ~/.zdirs)"//"$HOME"([[:space:]]|)/} )
+        dirstack=( ${(f)"$(< ~/.zdirs)"} )
     fi
 
     function _persist_dirstack {
