@@ -33,8 +33,8 @@ if (is-at-least 4.1) \
     && zstyle -t ':prezto:module:directory' persist-dirstack
 then
     if [[ -f ~/.zdirs ]] && [[ ${#dirstack[*]} -eq 0 ]]; then
-        # We need to clean home directory
-        dirstack=( ${(uf)"$(< ~/.zdirs)"} )
+        echo "\n" >> ~/.zdirs
+        dirstack=( ${(uf)"$(< ~/.zdirs)"//"$HOME"[[:space:]]/} )
     fi
 
     function _persist_dirstack {
