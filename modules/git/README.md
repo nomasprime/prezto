@@ -196,7 +196,7 @@ Aliases
 ### Tag
 
   - `gt` lists tags or creates tag.
-  - `gtg` lists tags matching pattern.
+  - `gtl` lists tags matching pattern.
 
 ### Working directory
 

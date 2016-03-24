@@ -171,7 +171,7 @@ alias gSx='git-submodule-remove'
 
 # Tag (t)
 alias gt='git tag'
-alias gtg='git tag -l'
+alias gtl='git tag -l'
 
 # Working Copy (w)
 alias gws='git status --ignore-submodules=${_git_status_ignore_submodules} --short'
