@@ -8,5 +8,5 @@
 autoload -Uz chpwd_recent_dirs cdr
 autoload -U add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
-zstyle ':chpwd:*' recent-dirs-max 10
+zstyle ':chpwd:*' recent-dirs-max 13
 zstyle ':chpwd:*' recent-dirs-default yes
