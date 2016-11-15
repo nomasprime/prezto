@@ -52,13 +52,6 @@ zstyle ':prezto:load' pmodule \
 # zstyle ':prezto:module:autosuggestions:color' found ''
 
 #
-# Directory
-#
-
-# Persist dirstack
-zstyle ':prezto:module:directory' persist-dirstack 'yes'
-
-#
 # Editor
 #
 
