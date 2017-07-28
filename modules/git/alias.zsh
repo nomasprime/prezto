@@ -36,6 +36,7 @@ if ! zstyle -t ':prezto:module:git:alias' skip 'yes'; then
   alias gbc='git checkout -b'
   alias gbd='git branch --delete'
   alias gbD='git branch --delete --force'
+  alias gbf='git branch --force'
   alias gbl='git branch --verbose'
   alias gbL='git branch --all --verbose'
   alias gbm='git branch --move'
