@@ -45,6 +45,8 @@ if ! zstyle -t ':prezto:module:git:alias' skip 'yes'; then
   alias gbR='git branch --move --force'
   alias gbs='git show-branch'
   alias gbS='git show-branch --all'
+  alias gbt='git branch --track'
+  alias gbT='git-branch-track-all'
   alias gbv='git branch --verbose'
   alias gbV='git branch --verbose --verbose'
   alias gbx='git branch --delete'

@@ -1,0 +1,14 @@
+#
+# Tracks remote branches
+#
+# Authors:
+#   Rick Jones <rick.jones@playtimestudios.com>
+#
+
+# function git-branch-track-all {
+
+for remote in `git branch -r `; do
+  git branch --track $remote
+done
+
+# }
