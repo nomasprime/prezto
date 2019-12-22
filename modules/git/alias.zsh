@@ -82,15 +82,6 @@ if ! zstyle -t ':prezto:module:git:alias' skip 'yes'; then
   alias gCt='git checkout --theirs --'
   alias gCT='gCt $(gCl)'
 
-  # Data (d)
-  alias gd='git ls-files'
-  alias gdc='git ls-files --cached'
-  alias gdx='git ls-files --deleted'
-  alias gdm='git ls-files --modified'
-  alias gdu='git ls-files --other --exclude-standard'
-  alias gdk='git ls-files --killed'
-  alias gdi='git status --porcelain --short --ignored | sed -n "s/^!! //p"'
-
   # Fetch (f)
   alias gf='git fetch'
   alias gfa='git fetch --all'
@@ -191,6 +182,15 @@ if ! zstyle -t ':prezto:module:git:alias' skip 'yes'; then
   alias glg='git log --topo-order --all --graph --pretty=format:"${_git_log_oneline_format}"'
   alias glb='git log --topo-order --pretty=format:"${_git_log_brief_format}"'
   alias glc='git shortlog --summary --numbered'
+
+  # List (L)
+  alias gLf='git ls-files'
+  alias gLfc='git ls-files --cached'
+  alias gLfx='git ls-files --deleted'
+  alias gLfm='git ls-files --modified'
+  alias gLfu='git ls-files --other --exclude-standard'
+  alias gLfk='git ls-files --killed'
+  alias gLfi='git status --porcelain --short --ignored | sed -n "s/^!! //p"'
 
   # Merge (m)
   alias gm='git merge'
