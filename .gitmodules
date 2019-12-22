@@ -27,4 +27,4 @@
 	url = https://github.com/mafredri/zsh-async.git
 [submodule "modules/prompt/external/garrett"]
 	path = modules/prompt/external/garrett
-	url = git@github.com:nomasprime/zsh_prompt_garrett.git
+	url = git@github.com:chauncey-garrett/zsh-prompt-garrett.git
