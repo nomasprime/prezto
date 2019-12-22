@@ -93,15 +93,15 @@ zstyle ':prezto:module:git:alias' skip 'yes'
   - `gCt` checks out their changes for unmerged paths.
   - `gCT` checks out their changes for all unmerged paths.
 
-### Data
+### List
 
-  - `gd` displays information about files in the index and the work tree.
-  - `gdc` lists cached files.
-  - `gdx` lists deleted files.
-  - `gdm` lists modified files.
-  - `gdu` lists untracked files.
-  - `gdk` lists killed files.
-  - `gdi` lists ignored files.
+  - `gLf` displays information about files in the index and the work tree.
+  - `gLfc` lists cached files.
+  - `gLfx` lists deleted files.
+  - `gLfm` lists modified files.
+  - `gLfu` lists untracked files.
+  - `gLfk` lists killed files.
+  - `gLfi` lists ignored files.
 
 ### Fetch
 
