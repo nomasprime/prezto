@@ -184,6 +184,7 @@ if ! zstyle -t ':prezto:module:git:alias' skip 'yes'; then
   alias glc='git shortlog --summary --numbered'
 
   # List (L)
+  alias gLt='git ls-tree --name-only -r'
   alias gLf='git ls-files'
   alias gLfc='git ls-files --cached'
   alias gLfx='git ls-files --deleted'

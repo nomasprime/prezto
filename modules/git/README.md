@@ -95,6 +95,7 @@ zstyle ':prezto:module:git:alias' skip 'yes'
 
 ### List
 
+  - `gLt` lists files in another tree.
   - `gLf` displays information about files in the index and the work tree.
   - `gLfc` lists cached files.
   - `gLfx` lists deleted files.
