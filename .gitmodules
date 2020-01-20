@@ -33,4 +33,4 @@
 	url = https://github.com/romkatv/powerlevel10k.git
 [submodule "contrib"]
 	path = contrib
-	url = https://github.com/belak/prezto-contrib.git
+	url = git@github.com:nomasprime/prezto-contrib.git
