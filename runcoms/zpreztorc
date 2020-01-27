@@ -49,7 +49,6 @@ zstyle ':prezto:load' pmodule \
   'ruby' \
   'syntax-highlighting' \
   'tmux' \
-  'fzy' \
   'prompt'
 
 #
