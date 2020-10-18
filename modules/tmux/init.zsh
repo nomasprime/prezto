@@ -41,9 +41,25 @@ if [[ -z "$TMUX" && -z "$EMACS" && -z "$VIM" && -z "$INSIDE_EMACS" && "$TERM_PRO
   exec tmux $_tmux_iterm_integration attach-session -d
 fi
 
+function attach-pwd-session {
+  path_name="$(basename "$PWD" | tr . -)"
+  session_name=${1-$path_name}
+
+  if [ -z "$TMUX" ]; then
+    tmux new-session -As "$session_name"
+  else
+    if ! tmux has-session -t "=$session_name"; then
+      (TMUX='' tmux new-session -Ad -s "$session_name")
+    fi
+
+    tmux switch-client -t "$session_name"
+  fi
+}
+
 #
 # Aliases
 #
 
+alias tmA="attach-pwd-session"
 alias tma="tmux $_tmux_iterm_integration new-session -A"
 alias tml='tmux list-sessions'
