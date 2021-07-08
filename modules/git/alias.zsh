@@ -12,11 +12,11 @@
 
 # Log
 zstyle -s ':prezto:module:git:log:medium' format '_git_log_medium_format' \
-  || _git_log_medium_format='%C(bold)Commit:%C(reset) %C(green)%H%C(red)%d%n%C(bold)Author:%C(reset) %C(cyan)%an <%ae>%n%C(bold)Date:%C(reset)   %C(blue)%ai (%ar)%C(reset)%n%+B'
+  || _git_log_medium_format='%C(dim white)Commit:%C(reset) %C(yellow)%H%C(auto)%d%n%C(dim white)Author:%C(reset) %C(cyan)%an <%ae>%n%C(dim white)Date:%C(reset)   %C(blue)%ai (%ar)%C(reset)%n%+B'
 zstyle -s ':prezto:module:git:log:oneline' format '_git_log_oneline_format' \
-  || _git_log_oneline_format='%C(green)%h%C(reset) %s%C(red)%d%C(reset)%n'
+  || _git_log_oneline_format='%C(yellow)%h%C(reset) %s%C(auto)%d%C(reset)%n'
 zstyle -s ':prezto:module:git:log:brief' format '_git_log_brief_format' \
-  || _git_log_brief_format='%C(green)%h%C(reset) %s%n%C(blue)(%ar by %an)%C(red)%d%C(reset)%n'
+  || _git_log_brief_format='%C(yellow)%h%C(reset) %s%C(auto)%d%n%C(cyan)%an %C(blue)(%ar)%C(reset)%n'
 
 # Status
 zstyle -s ':prezto:module:git:status:ignore' submodules '_git_status_ignore_submodules' \
