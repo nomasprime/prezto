@@ -11,12 +11,16 @@ Settings
 
 ### Log
 
-The format of the [git-log][8] output is configurable via the following style,
+The format of the [git-log][8] and [git-reflog][9] output is configurable via the following styles,
 where context is *brief*, *oneline*, and *medium*, which will be passed to the
 `--pretty=format:` switch.
 
 ```sh
 zstyle ':prezto:module:git:log:context' format ''
+```
+
+```sh
+zstyle ':prezto:module:git:reflog:context' format ''
 ```
 
 ### Status
@@ -220,9 +224,15 @@ zstyle ':prezto:module:git:alias' skip 'yes'
   - `gld` displays the diff log.
   - `glo` displays the one line log.
   - `glg` displays the graph log.
-  - `glb` displays the brief commit log.
+  - `glb` displays the brief log.
   - `glc` displays the commit count for each contributor in descending order.
   - `glS` displays the log and checks the validity of signed commits.
+  - `glr` displays the reflog.
+  - `glrs` displays the stats reflog.
+  - `glrd` displays the diff reflog.
+  - `glro` displays the one line reflog.
+  - `glrb` displays the brief reflog.
+  - `glrS` displays the reflog and checks the validity of signed commits.
 
 ### Merge
 
@@ -320,8 +330,8 @@ zstyle ':prezto:module:git:alias' skip 'yes'
 
 The following aliases may shadow system commands:
 
-  - `gb` shadows the [GB][9].
-  - `gm` shadows the [Graphics Magick image processor][11].
+  - `gb` shadows the [GB][10].
+  - `gm` shadows the [Graphics Magick image processor][12].
   - `gpt` shadows the [GUID partition table maintenance utility][4].
   - `gs` shadows the [Ghostscript interpreter and previewer][5].
 
@@ -338,7 +348,7 @@ Functions
   - `git-commit-lost` lists lost commits.
   - `git-dir` displays the path to the Git directory.
   - `git-hub-browse` opens the [GitHub][3] repository in the default browser.
-  - `git-hub-shorten-url` shortens [GitHub URLs][10].
+  - `git-hub-shorten-url` shortens [GitHub URLs][11].
   - `git-info` exposes repository information via the `$git_info` associative
     array.
   - `git-root` displays the path to the working tree root.
@@ -452,6 +462,7 @@ Authors
 [6]: https://github.com/sorin-ionescu/prezto/issues
 [7]: https://github.com/sorin-ionescu/prezto/issues/219
 [8]: http://www.kernel.org/pub/software/scm/git/docs/git-log.html
-[9]: https://getgb.io/
-[10]: https://github.com/blog/985-git-io-github-url-shortener
-[11]: http://www.manpagez.com/man/1/gm/
+[9]: http://www.kernel.org/pub/software/scm/git/docs/git-reflog.html
+[10]: https://getgb.io/
+[11]: https://github.com/blog/985-git-io-github-url-shortener
+[12]: http://www.manpagez.com/man/1/gm/

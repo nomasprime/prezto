@@ -17,6 +17,12 @@ zstyle -s ':prezto:module:git:log:oneline' format '_git_log_oneline_format' \
   || _git_log_oneline_format='%C(yellow)%h%C(reset) %s%C(auto)%d%C(reset)%n'
 zstyle -s ':prezto:module:git:log:brief' format '_git_log_brief_format' \
   || _git_log_brief_format='%C(yellow)%h%C(reset) %s%C(auto)%d%n%C(cyan)%an %C(blue)(%ar)%C(reset)%n'
+zstyle -s ':prezto:module:git:reflog:medium' format '_git_reflog_medium_format' \
+  || _git_reflog_medium_format='%C(dim white)Commit:%C(reset)       %C(yellow)%H%C(auto)%d%n%C(dim white)Ref selector:%C(reset) %C(green)%gD%n%C(dim white)Ref author:%C(reset)   %C(cyan)%gn <%ge>%n%C(dim white)Ref date:%C(reset)     %C(blue)%ci (%cr)%n%C(dim white)Ref message:%C(reset)  %C(magenta)%gs%n%C(dim white)Author:%C(reset)       %C(cyan)%an <%ae>%n%C(dim white)Date:%C(reset)         %C(blue)%ai (%ar)%C(reset)%n%+B'
+zstyle -s ':prezto:module:git:reflog:oneline' format '_git_reflog_oneline_format' \
+  || _git_reflog_oneline_format='%C(yellow)%h %C(blue)%cr%C(reset) %C(magenta)%gs%C(reset) %C(white)%s%C(reset)%C(auto)%d%C(reset)%n'
+zstyle -s ':prezto:module:git:reflog:brief' format '_git_reflog_brief_format' \
+  || _git_reflog_brief_format='%C(yellow)%h%C(reset) %s%C(auto)%d%n%C(green)%gD %C(magenta)%gs%n%C(cyan)%gn %C(blue)(%cr)%C(reset)%n'
 
 # Status
 zstyle -s ':prezto:module:git:status:ignore' submodules '_git_status_ignore_submodules' \
@@ -190,6 +196,13 @@ if ! zstyle -t ':prezto:module:git:alias' skip 'yes'; then
   alias glb='git log --topo-order --pretty=format:"${_git_log_brief_format}"'
   alias glc='git shortlog --summary --numbered'
   alias glS='git log --show-signature'
+
+  alias glr='git reflog --pretty=format:"${_git_reflog_medium_format}"'
+  alias glrs='git reflog --stat --pretty=format:"${_git_reflog_medium_format}"'
+  alias glrd='git reflog --stat --patch --full-diff --pretty=format:"${_git_reflog_medium_format}"'
+  alias glro='git reflog --pretty=format:"${_git_reflog_oneline_format}"'
+  alias glrb='git reflog --pretty=format:"${_git_reflog_brief_format}"'
+  alias glrS='git reflog --show-signature'
 
   # List (L)
   alias gLt='git ls-tree --name-only -r'
