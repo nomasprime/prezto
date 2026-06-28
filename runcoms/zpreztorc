@@ -87,6 +87,10 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
 # zstyle ':prezto:module:git:status:ignore' submodules 'all'
 
+# Set the required base directory for `gfC`, which clones GitHub repositories into
+# "${base-directory}/${owner}/${repository}".
+zstyle ':prezto:module:git:clone' base-directory "${HOME}/Organisations"
+
 #
 # GNU Utility
 #
