@@ -1,0 +1,64 @@
+#
+# Clones a GitHub repository into a directory named for its owner.
+#
+# Authors:
+#   Richard Jones
+#
+
+# function git-clone-into-owner {
+
+local usage base_directory repository_url parsed owner repository
+local checkout_parent checkout_directory argument
+
+usage="usage: $0 [git-clone-option ...] github-repository"
+
+if (( $# < 1 )); then
+  print "$usage" >&2
+  return 1
+fi
+
+for argument in "$@"; do
+  parsed="$(
+    print -r -- "$argument" \
+      | sed -En 's#^(git@|ssh://git@|https?://|git://)?github\.com[:/]([^/]+)/([^/#?]+)(\.git)?/?$#\2 \3#p'
+  )"
+
+  if [[ -n "$parsed" ]]; then
+    repository_url="$argument"
+    owner="${parsed%% *}"
+    repository="${parsed#* }"
+    repository="${repository%.git}"
+    break
+  fi
+done
+
+if [[ -z "$repository_url" ]]; then
+  print "$0: GitHub repository URL not found" >&2
+  print "$usage" >&2
+  return 1
+fi
+
+if ! zstyle -s ':prezto:module:git:clone' base-directory 'base_directory'; then
+  print "$0: missing required zstyle: :prezto:module:git:clone base-directory" >&2
+  return 1
+fi
+
+base_directory="${~base_directory}"
+
+if [[ -z "$base_directory" ]]; then
+  print "$0: zstyle cannot be empty: :prezto:module:git:clone base-directory" >&2
+  return 1
+fi
+
+checkout_parent="${base_directory%/}/${owner}"
+checkout_directory="${checkout_parent}/${repository}"
+
+if [[ -e "$checkout_directory" ]]; then
+  print "$0: destination already exists: $checkout_directory" >&2
+  return 1
+fi
+
+mkdir -p "$checkout_parent" || return 1
+command git clone "$@" "$checkout_directory"
+
+# }

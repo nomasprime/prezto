@@ -40,6 +40,15 @@ zstyle ':prezto:module:git:status:ignore' submodules '<state>'
 
 This setting affects all aliases and functions that call `git-status`.
 
+### Clone
+
+To set the required base directory used by `gfC`, add the following to
+_`${ZDOTDIR:-$HOME}/.zpreztorc`_.
+
+```sh
+zstyle ':prezto:module:git:clone' base-directory "${HOME}/Organisations"
+```
+
 ## Aliases
 
 Aliases are enabled by default. To disable them, add the following to
@@ -122,6 +131,7 @@ zstyle ':prezto:module:git:alias' skip 'yes'
 - `gf` downloads objects and references from another repository.
 - `gfa` downloads objects and references from all remote repositories.
 - `gfc` clones a repository into a new directory.
+- `gfC` clones a GitHub repository into `<base-directory>/<owner>/<repository>`.
 - `gfcr` clones a repository into a new directory including all submodules.
 - `gfm` fetches from and merges with another repository or local branch.
 - `gfr` fetches from and rebases on another repository or local branch.
